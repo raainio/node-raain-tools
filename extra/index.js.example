@@ -1,0 +1,12 @@
+
+
+const myImportOptions = {
+    defaultRepo: 'tests'
+};
+
+const myReadOptions = {
+    readTimeLimitInSec: 7200 // 7200 = 2h
+};
+
+exports.myImportOptions = myImportOptions;
+exports.myReadOptions = myReadOptions;
