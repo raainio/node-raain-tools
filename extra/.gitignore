@@ -1,1 +1,6 @@
-*.js
+# Ignore everything
+*
+
+# But these files...
+!.gitignore
+!index.js.example
