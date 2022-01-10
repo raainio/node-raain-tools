@@ -1,6 +1,6 @@
 {
   "name": "node-raain-tools",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "raain tools",
   "main": "gulpfile.js",
   "scripts": {
@@ -12,8 +12,16 @@
   ],
   "author": "raain",
   "dependencies": {
-    "dotenv": "^7.0.0",
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14",
+    "axios": "^0.24.0",
+    "csvtojson": "^2.0.10",
+    "dotenv": "^10.0.0",
+    "fidj": "^3.3.6",
     "gulp": "^4.0.2",
-    "uuid": "^3.3.2"
+    "raain-model": "^0.2.9",
+    "rxjs": "^7.5.1",
+    "through2": "^4.0.2",
+    "uuid": "^8.3.2"
   }
 }

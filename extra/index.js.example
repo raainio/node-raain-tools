@@ -1,12 +1,23 @@
+// Create your own extra/index.js
 
+// 1) Define you Gulp Tasks
 
-const myImportOptions = {
-    defaultRepo: 'tests'
+const {tasks:extraTasksImported}  = require('./index.awesome.extra');
+// OR
+const extraTasksDefined = {
+    exampleOfTask: async () => {
+        console.log('Do my stuff...');
+    },
+    // ...
 };
 
-const myReadOptions = {
-    readTimeLimitInSec: 7200 // 7200 = 2h
-};
+// 2) Export them
 
-exports.myImportOptions = myImportOptions;
-exports.myReadOptions = myReadOptions;
+let exportedTasks = {};
+const extraTasks = (tasksToAdd) => {
+    Object.assign(exportedTasks, extraTasksImported);
+    Object.assign(exportedTasks, extraTasksDefined);
+    Object.assign(exportedTasks, tasksToAdd);
+    return exportedTasks;
+};
+exports.extraTasks = extraTasks;

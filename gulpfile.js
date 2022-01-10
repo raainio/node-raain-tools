@@ -2,13 +2,14 @@ const dotenv = require('dotenv').config();
 const {src, dest, task, parallel, series} = require('gulp');
 const {crawler} = require('./src/crawler');
 
-// Extra configs :
-let myExtraOptions = {};
+// Extra tasks :
+let tasks = {crawler: crawler};
 try {
-    myExtraOptions = require('./extra').myExtraOptions;
+    const extraTasks = require('./extra').extraTasks;
+    tasks = extraTasks(crawler);
 } catch (e) {
+    console.log('Some extra tasks can be created and used (ask raain sales)')
 }
 
 // Tasks :
-
-exports.default = [];
+module.exports = tasks;
