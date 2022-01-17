@@ -1,7 +1,7 @@
-const dotenv = require('dotenv').config();
-const {src, dest, task, parallel, series} = require('gulp');
+require('dotenv').config();
 const RaainImport = require('./src/raain.import');
 
+// Enjoy tasks :
 let tasks = {};
 [RaainImport]
     .forEach((classObject) => {
@@ -16,12 +16,12 @@ let tasks = {};
     });
 
 // Extra tasks :
-// try {
-const {extraTasks} = require('./extra');
-tasks = extraTasks(tasks);
-//} catch (e) {
-//    console.log('Some extra tasks can be created and used (ask raain sales)')
-//}
+try {
+    const {extraTasks} = require('./extra');
+    tasks = extraTasks(tasks);
+} catch (e) {
+    console.log('Some extra tasks can be created and used (ask raain sales)')
+}
 
-// Tasks :
+// Gulp tasks :
 module.exports = tasks;
